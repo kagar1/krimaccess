@@ -11,8 +11,12 @@ const styles = StyleSheet.create({
     },
     sub1Title:{
         color: 'white',
-        fontSize: 25,
+        fontSize: 27,
         fontWeight: 'bold'
+    },
+    sub1Logo:{
+        height: 200,
+        width: 200
     },
     mainlogin:{
         flex: 1,
