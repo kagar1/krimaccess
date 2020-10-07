@@ -27,11 +27,23 @@ const styles = StyleSheet.create({
     sub2Layout : {
         flex: 3,
         backgroundColor:'white',
-        alignItems:'center',
+        padding : 25,
         borderTopEndRadius:30,
         borderTopStartRadius:30,
         paddingTop: 10,
     },
+
+    labelInput:{
+        fontWeight: 'bold',
+        color: 'black' 
+    },
+    
+    inputBlock:{
+        marginTop: 30,
+    },
+    blockTitle:{
+        alignItems: 'center'
+    }
 
 })
 
