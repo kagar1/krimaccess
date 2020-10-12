@@ -42,7 +42,15 @@ const styles = StyleSheet.create({
         marginTop: 30,
     },
     blockTitle:{
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: 15,
+    },
+
+    // picker styles
+    picker:{
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor : "gray"
     }
 
 })

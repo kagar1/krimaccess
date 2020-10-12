@@ -1,9 +1,9 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {Text, View, Image} from 'react-native';
 import styles from '../styles';
 import * as Animatable from 'react-native-animatable'
 
-export default function LoginSub1(){
+export default function RegisterSub1(){
     return (
         <View style={styles.sub1Layout}>
             <Text style = {styles.sub1Title}>Welcome</Text>
