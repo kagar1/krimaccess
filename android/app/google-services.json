@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "655560231224",
+    "firebase_url": "https://krimaccess.firebaseio.com",
+    "project_id": "krimaccess",
+    "storage_bucket": "krimaccess.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655560231224:android:f91ea8c05ad2799d4399cd",
+        "android_client_info": {
+          "package_name": "com.krim.krimaccess"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655560231224-cte6ia5fh6cmpdlh8qjaihs89j5m53fo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2va6KDNQhg3uSF-r1HwShBghFClHEnVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655560231224-cte6ia5fh6cmpdlh8qjaihs89j5m53fo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655560231224:android:f09c71fb4d637acd4399cd",
+        "android_client_info": {
+          "package_name": "com.krimaccess"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655560231224-cte6ia5fh6cmpdlh8qjaihs89j5m53fo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2va6KDNQhg3uSF-r1HwShBghFClHEnVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655560231224-cte6ia5fh6cmpdlh8qjaihs89j5m53fo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
