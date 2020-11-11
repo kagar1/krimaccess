@@ -17,11 +17,21 @@ export default class LoginPage extends Component {
    this.props.navigation.navigate('Register');
   }
 
+  //another little navigation 
+  moving = ()=>{
+    this.props.navigation.navigate("Employee"); 
+  }
+
+  //another little navigation 
+  move = ()=>{
+    this.props.navigation.navigate("Home"); 
+  }
+
   render() {
     return (
       <View  style ={styles.mainlogin}>
         <LoginSub1 />
-        <LoginSub2 navigation={this.navigation}/> 
+        <LoginSub2 navigation={this.navigation}  moving = {this.moving}  move={this.move} /> 
       </View>
     );
   }

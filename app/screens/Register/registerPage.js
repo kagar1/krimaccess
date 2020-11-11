@@ -16,11 +16,16 @@ export default class RegisterPage extends Component {
     this.props.navigation.navigate("Login");
   }
 
+  homeCompanyNav = (value)=>{
+    
+    this.props.navigation.navigate(value);
+  }
+
   render() {
     return (
         <View  style ={styles.mainlogin}>
             <RegisterSub1 />
-            <RegisterSub2 navigation={this.navigation}/>
+            <RegisterSub2 navigation={this.navigation}  company={this.homeCompanyNav} />
         </View>
     );
   }

@@ -10,9 +10,9 @@ import FormCompany from './subForm/formCompany';
 import {Picker} from '@react-native-community/picker';
 import fire from '../../config/navigation/firebase/firebaseConnexion'
 
-
+const db = fire.firestore();
 export default function RegisterSub2 (props){
-
+    var data ="";
     // control
     const [account, setAccount] = useState("Employee");
     const [isEmployeeFormShow, setIsEmployeeFormShow] = useState(true);
@@ -39,30 +39,77 @@ export default function RegisterSub2 (props){
     }
 
     
-
+    //function to check if COmpanyCode Exists
+    function checkCompanyCode(valeur){
+         
+      fire.firestore().collection("Company").where("companyCode", "==", valeur).get()
+        
+    }
     
     // function which is calling when a user is creating an account 
     function registerAction () {
+        var doCompanyExist = false;
         if(account == "Employee"){
-            alert(" we're trying to register an employee");
+            if( email =="" || name == "" || Password == "" || companyCode == ""){
+                alert("Have you forget to fill one field ? ");
+            }else{
+                //we check if the filled CompanyCode correspond to an existing Company in our database
+                fire.firestore().collection("Company").where("companyCode", "==", companyCode).get().then(snap => {
+                    if(snap.empty){
+                        alert("Make sure you have type your Company wright Code");
+                    }else{
+                        
+                        let company_Id = snap.docs[0].data().id;
+                        let company_Name = snap.docs[0].data().companyName
+                        auth().createUserWithEmailAndPassword(email,Password).then((response) =>{
+
+                            const user_id = response.user.uid;
+                            const data1 ={
+                                id: user_id,
+                                name: name,
+                                email: email,
+                                companyId: company_Id
+                            }
+
+                            fire.firestore().collection('Employee').add(data1).then(()=>{
+                                alert("You are now a " +  company_Name + "'s Employee");
+                                props.company("Employee");
+                            })
+                            .catch((error) => {
+                                alert(error);
+                            })
+                        })
+                    }
+                }).catch( error => alert(error))
+                
+                
+
+            }
         }else{
             if( companyName =="" || companyPassWord =="" || companyEmail=="" ){
                 alert("Have you forget to fill one field ?")
             }else{
                 alert(" creating a new company ");
                 auth().createUserWithEmailAndPassword(companyEmail, companyPassWord).then((response) =>{
+                  
+                  //getting the Id generate by firebase when new Auth is create
                   const id = response.user.uid;
 
+                  //base on that Id we create our Company Code
+                  const companyCode = id.substring(0,11).toUpperCase();
+                
                   alert(id);
                   const data = {
                       id: id,
                       companyName: companyName,
-                      companyEmail: companyEmail
+                      companyEmail: companyEmail,
+                      companyCode: companyCode,
                   };
                     
 
                   fire.firestore().collection('Company').add(data).then(()=>{
                       alert("Company create ");
+                      props.company("Home");
                   })
                   .catch((error) => {
                       alert(error);

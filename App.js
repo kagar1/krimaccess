@@ -11,8 +11,7 @@ import StackNav from './app/config/navigation/StackNav';
 const Stack = createStackNavigator();
 export default function App() {
   return (
-   
-      
+    
       <StackNav />
     
   );
